@@ -1,5 +1,4 @@
 # coding=utf-8
-from tomorrow import threads
 from appium.webdriver.common.touch_action import TouchAction
 
 def swipeUp(driver, t=500, n=1):

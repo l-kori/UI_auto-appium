@@ -1,12 +1,11 @@
 # coding=utf-8
-from tomorrow import threads
 from appium.webdriver.common.touch_action import TouchAction
 import logging
 import time
 
 
 LOG_FORMAT = "%(asctime)s - %(levelname)s - %(message)s"
-logging.basicConfig(filename='../hsl/log/hsl.log', level=logging.INFO, format=LOG_FORMAT)
+logging.basicConfig(filename='./log/hsl.log', level=logging.INFO, format=LOG_FORMAT)
 
 def Restore(driver):
     while 1:
