@@ -116,19 +116,19 @@ function html_escape(s) {
 <div class='heading'>
 <h1 style="font-family: Microsoft YaHei">步多多</h1>
 <p class='attribute'><strong>测试人员 : </strong> Kori</p>
-<p class='attribute'><strong>开始时间 : </strong> 2020-06-19 21:13:06</p>
-<p class='attribute'><strong>合计耗时 : </strong> 0:00:00.001523</p>
-<p class='attribute'><strong>测试结果 : </strong> 共 2，通过 1，失败 1，通过率= 50.00%</p>
+<p class='attribute'><strong>开始时间 : </strong> 2020-06-19 23:32:28</p>
+<p class='attribute'><strong>合计耗时 : </strong> 0:00:28.967765</p>
+<p class='attribute'><strong>测试结果 : </strong> 共 1，错误 1，通过率= 0.00%</p>
 
 <p class='description'></p>
 </div>
 
 
 <p id='show_detail_line'>
-<a class="btn btn-primary" href='javascript:showCase(0)'>概要{ 50.00% }</a>
-<a class="btn btn-danger" href='javascript:showCase(1)'>失败{ 1 }</a>
-<a class="btn btn-success" href='javascript:showCase(2)'>通过{ 1 }</a>
-<a class="btn btn-info" href='javascript:showCase(3)'>所有{ 2 }</a>
+<a class="btn btn-primary" href='javascript:showCase(0)'>概要{ 0.00% }</a>
+<a class="btn btn-danger" href='javascript:showCase(1)'>失败{ 0 }</a>
+<a class="btn btn-success" href='javascript:showCase(2)'>通过{ 0 }</a>
+<a class="btn btn-info" href='javascript:showCase(3)'>所有{ 1 }</a>
 </p>
 <table id='result_table' class="table table-condensed table-bordered table-hover">
 <colgroup>
@@ -148,53 +148,43 @@ function html_escape(s) {
     <td>详细</td>
 </tr>
 
-<tr class='failClass warning'>
+<tr class='errorClass warning'>
     <td>case.loginCase.TestMathMethod</td>
-    <td class="text-center">2</td>
-    <td class="text-center">1</td>
     <td class="text-center">1</td>
     <td class="text-center">0</td>
-    <td class="text-center"><a href="javascript:showClassDetail('c1',2)" class="detail" id='c1'>详细</a></td>
+    <td class="text-center">0</td>
+    <td class="text-center">1</td>
+    <td class="text-center"><a href="javascript:showClassDetail('c1',1)" class="detail" id='c1'>详细</a></td>
 </tr>
 
 <tr id='ft1_1' class='none'>
-    <td class='failCase'><div class='testcase'>test_add_two_positive</div></td>
+    <td class='errorCase'><div class='testcase'>test01</div></td>
     <td colspan='5' align='center'>
     <!--默认收起错误信息 -Findyou
-    <button id='btn_ft1_1' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft1_1'>失败</button>
+    <button id='btn_ft1_1' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft1_1'>错误</button>
     <div id='div_ft1_1' class="collapse">  -->
     <!-- 默认展开错误信息 -Findyou -->
-    <button id='btn_ft1_1' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_ft1_1'>失败</button>
+    <button id='btn_ft1_1' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_ft1_1'>错误</button>
     <div id='div_ft1_1' class="collapse in" align="left">
     <pre>
     
-ft1_1: 1+3的结果是1
-断言错误是5 != 1 : 两个0相加的值不对！
-Traceback (most recent call last):
-  File "/Users/kori/Desktop/appium-demo-master/appium-demo-master/case/loginCase.py", line 14, in test_add_two_positive
-    raise e
-  File "/Users/kori/Desktop/appium-demo-master/appium-demo-master/case/loginCase.py", line 11, in test_add_two_positive
-    self.assertEqual (5, res, "两个0相加的值不对！")  # 这里我为了可以报错，所以期望值写的是5
-AssertionError: 5 != 1 : 两个0相加的值不对！
+ft1_1: Traceback (most recent call last):
+  File "/Users/kori/Desktop/appium-demo-master/appium-demo-master/case/loginCase.py", line 24, in test01
+    self.driver.find_element_by_id("com.songheng.eastnews:id/ahw").click()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/selenium/webdriver/remote/webdriver.py", line 360, in find_element_by_id
+    return self.find_element(by=By.ID, value=id_)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/appium/webdriver/webdriver.py", line 279, in find_element
+    return self.execute(RemoteCommand.FIND_ELEMENT, {
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/appium/webdriver/errorhandler.py", line 31, in check_response
+    raise wde
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/appium/webdriver/errorhandler.py", line 26, in check_response
+    super().check_response(response)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchElementException: Message: An element could not be located on the page using the given search parameters.
 
-
-    </pre>
-    </div>
-    </td>
-</tr>
-
-<tr id='pt1_2' class='hiddenRow'>
-    <td class='passCase'><div class='testcase'>test_multi_two_negative</div></td>
-    <td colspan='5' align='center'>
-    <!--默认收起错误信息 -Findyou
-    <button id='btn_pt1_2' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt1_2'>通过</button>
-    <div id='div_pt1_2' class="collapse">  -->
-    <!-- 默认展开错误信息 -Findyou -->
-    <button id='btn_pt1_2' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_pt1_2'>通过</button>
-    <div id='div_pt1_2' class="collapse in" align="left">
-    <pre>
-    
-pt1_2: -3*-9的结果是1
 
 
     </pre>
@@ -204,11 +194,11 @@ pt1_2: -3*-9的结果是1
 
 <tr id='total_row' class="text-center active">
     <td>总计</td>
-    <td>2</td>
-    <td>1</td>
     <td>1</td>
     <td>0</td>
-    <td>通过率：50.00%</td>
+    <td>0</td>
+    <td>1</td>
+    <td>通过率：0.00%</td>
 </tr>
 </table>
 

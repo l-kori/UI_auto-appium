@@ -29,8 +29,9 @@ def run_devices():
             # p.start()
             logging.info("appium服务启动")
             # APP启动
-            run_App.run_app(rr[0],port)
+            driver = run_App.run_app(rr[0],port)
             time.sleep(10)
+            return driver
 
     else:
         logging.info("当前没有可启动的Android手机，请检查设备连接")

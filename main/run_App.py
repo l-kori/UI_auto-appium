@@ -18,7 +18,5 @@ def run_app(device,port):
     }
     logging.info("APP启动")
     driver = webdriver.Remote('http://0.0.0.0:' + str(port) + '/wd/hub', capabilities)
-    time.sleep(5)
-
-    #执行测试用例
-    run_case.run_test_case()
+    time.sleep(3)
+    return driver

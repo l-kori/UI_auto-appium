@@ -1,19 +1,24 @@
 #!usr/bin/env python3
 # -*- coding:utf-8 _*-
 import unittest
+import time
+from main import run_service
 
 class TestMathMethod (unittest.TestCase):
-# 两个正数相加
-    def test_add_two_positive(self):
-        res = 1
-        print ("1+3的结果是{0}".format (res))
-        try:
-            self.assertEqual (5, res, "两个0相加的值不对！")  # 这里我为了可以报错，所以期望值写的是5
-        except Exception as e:
-            print("断言错误是{0}".format(e))
-        raise e
+    # 初始化app
+    def setUp(self):
+        self.driver = run_service.run_devices()
 
-        # 两个负数相乘
-    def test_multi_two_negative(self):
-        res = 1
-        print ("-3*-9的结果是{0}".format (res))
+    # 执行  退出登录case
+    def test01(self):
+        # 点击我的
+        self.driver.find_element_by_id("com.songheng.eastnews:id/a_q").click()
+        # 点击我的设置
+        self.driver.find_element_by_xpath(
+            "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout[2]/android.widget.RelativeLayout[1]/android.support.v4.view.ViewPager/android.widget.RelativeLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.RelativeLayout/android.view.ViewGroup/android.support.v7.widget.RecyclerView/android.widget.LinearLayout[4]/android.widget.LinearLayout/android.support.v7.widget.RecyclerView/android.widget.RelativeLayout[5]/android.widget.TextView").click()
+       # 点击
+        self.driver.find_element_by_id("com.songheng.eastnews:id/ec").click()
+        # 加入隐式等待，等待弹框出现
+        self.driver.implicitly_wait(3)
+        #确认退出
+        self.driver.find_element_by_id("com.songheng.eastnews:id/ahw").click()
