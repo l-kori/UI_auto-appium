@@ -1,4 +1,4 @@
-# Appium-python2进行app自动化测试框架
+# Appium-python3进行app自动化测试框架
 
 ---
 ## 一、项目介绍：
